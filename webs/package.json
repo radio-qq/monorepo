@@ -1,5 +1,5 @@
 {
-  "name": "element-plus-vite-starter",
+  "name": "webs",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -18,7 +18,8 @@
     "@vueuse/core": "^11.0.3",
     "element-plus": "^2.6.2",
     "lodash-es": "^4.17.21",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "my-components": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

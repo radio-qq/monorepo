@@ -6,6 +6,7 @@
     </div>
     <div class="flex main-container">
       <BaseSide />
+      <MyButton />
       <div w="full" m="1.5" bg-white>
         <BasicForm
           v-model="formModel"
@@ -31,6 +32,7 @@
 import { FormSchema, useForm } from "@/components/basic-form";
 import { TableSchema } from "@/components/basic-table";
 import { BasicRender } from "@/components/basic-render";
+import { MyButton } from "my-components";
 
 const formModel = ref({
   status: "0",
