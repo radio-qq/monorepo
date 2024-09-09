@@ -11,7 +11,6 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' },
     ],
-
     sidebar: [
       {
         text: 'Examples??',
@@ -21,11 +20,13 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Why??',
-        items: [{ text: 'whyme', link: '/whyme' }],
+        text: '基础组件',
+        items: [
+          { text: '状态', link: '/basic-components/basic-status' },
+          { text: '复制', link: '/basic-components/basic-copy' },
+        ],
       },
     ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ],

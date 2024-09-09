@@ -7,8 +7,23 @@
     <div class="flex main-container">
       <BaseSide />
       <!-- <MyButton /> -->
+      <BasicStatus
+        :list="[
+          {
+            content: '数组-1',
+            type: 'primary',
+          },
+          {
+            content: '数组-2',
+            type: 'success',
+          },
+          {
+            content: '数组-3',
+            color: '#f0e291',
+          },
+        ]"
+      />
       <div w="full" m="1.5" bg-white>
-        <BasicStatus>示例-1</BasicStatus>
         <!-- <BasicStatus>示例-2</BasicStatus> -->
         <!-- <BasicForm
           v-model="formModel"
@@ -34,166 +49,166 @@
 // import { FormSchema, useForm } from "@/components/basic-form";
 // import { TableSchema } from "@/components/basic-table";
 // import { BasicRender } from "@/components/basic-render";
-import { BasicStatus, BaseHeader, BaseSide } from "my-components";
+import { BasicStatus } from '@open-power/components'
 
 const formModel = ref({
-  status: "0",
-  name: "",
+  status: '0',
+  name: '',
   rate: 2,
   progress: 100,
   switch: true,
   time: new Date().toString(),
   endTime: [],
-  img: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
-});
+  img: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+})
 
 const schemas: FormSchema[] = [
   {
-    label: "名称",
-    prop: "name",
-    component: "input",
+    label: '名称',
+    prop: 'name',
+    component: 'input',
     rules: [
       {
         required: true,
-        message: "请输入名称111",
+        message: '请输入名称111',
       },
     ],
   },
   {
-    label: "标题",
-    prop: "nameee",
-    component: "sub-title",
+    label: '标题',
+    prop: 'nameee',
+    component: 'sub-title',
   },
   {
-    label: "名称",
-    prop: "nameeeee",
-    component: "input",
+    label: '名称',
+    prop: 'nameeeee',
+    component: 'input',
     hasLabel: false,
     rules: [
       {
         required: true,
-        message: "请输入名称111",
+        message: '请输入名称111',
       },
     ],
   },
   {
-    label: "√状态select",
-    prop: "tag",
-    component: "select",
+    label: '√状态select',
+    prop: 'tag',
+    component: 'select',
     rules: [
       {
         required: true,
-        message: "请输入标签",
+        message: '请输入标签',
       },
     ],
     componentProps: {
       options: [
         {
-          label: "未解决",
-          value: "0",
-          color: "red",
+          label: '未解决',
+          value: '0',
+          color: 'red',
         },
         {
-          label: "已解决",
-          value: "1",
-          color: "blue",
+          label: '已解决',
+          value: '1',
+          color: 'blue',
         },
         {
-          label: "解决中",
-          value: "2",
-          color: "yellow",
+          label: '解决中',
+          value: '2',
+          color: 'yellow',
         },
         {
-          label: "失败",
-          value: "3",
-          color: "red",
+          label: '失败',
+          value: '3',
+          color: 'red',
         },
       ],
     },
   },
   {
-    label: "评分",
-    prop: "rate",
-    component: "rate",
+    label: '评分',
+    prop: 'rate',
+    component: 'rate',
   },
   {
-    label: "是否显示",
-    prop: "switch",
-    component: "switch",
+    label: '是否显示',
+    prop: 'switch',
+    component: 'switch',
   },
   {
-    label: "时间",
-    prop: "time",
-    component: "date-picker",
+    label: '时间',
+    prop: 'time',
+    component: 'date-picker',
   },
   {
-    label: "数量",
-    prop: "number",
-    component: "input-number",
+    label: '数量',
+    prop: 'number',
+    component: 'input-number',
   },
   {
-    label: "√要求",
-    prop: "demand",
-    component: "checkbox",
+    label: '√要求',
+    prop: 'demand',
+    component: 'checkbox',
     componentProps: {
       options: [
         {
-          label: "四六级",
-          value: "0",
+          label: '四六级',
+          value: '0',
         },
         {
-          label: "计算机二级证书",
-          value: "1",
+          label: '计算机二级证书',
+          value: '1',
         },
         {
-          label: "普通话证书",
-          value: "2",
+          label: '普通话证书',
+          value: '2',
         },
       ],
     },
   },
   {
-    label: "梦想",
-    prop: "gift",
-    component: "radio-group",
+    label: '梦想',
+    prop: 'gift',
+    component: 'radio-group',
     componentProps: {
       options: [
         {
-          label: "诗",
-          value: "0",
+          label: '诗',
+          value: '0',
         },
         {
-          label: "远方",
-          value: "1",
+          label: '远方',
+          value: '1',
         },
         {
-          label: "美食",
-          value: "2",
+          label: '美食',
+          value: '2',
         },
       ],
     },
   },
   {
-    label: "到期时间",
-    prop: "endTime",
-    component: "date-picker",
+    label: '到期时间',
+    prop: 'endTime',
+    component: 'date-picker',
     componentProps: {
-      type: "datetimerange",
-      startPlaceholder: "请选择开始时间",
-      endPlaceholder: "请选择结束时间",
+      type: 'datetimerange',
+      startPlaceholder: '请选择开始时间',
+      endPlaceholder: '请选择结束时间',
     },
   },
   {
-    label: "说明",
-    prop: "desc",
-    component: "textarea",
+    label: '说明',
+    prop: 'desc',
+    component: 'textarea',
     componentProps: {
       maxlength: 10,
       showWordLimit: true,
       autosize: { minRows: 2, maxRows: 4 },
     },
   },
-];
+]
 
 // const [registerForm] = useForm({
 //   schemas,
@@ -201,22 +216,22 @@ const schemas: FormSchema[] = [
 
 const schema2: FormSchema[] = [
   {
-    label: "说明-1",
-    prop: "desc1",
-    component: "textarea",
+    label: '说明-1',
+    prop: 'desc1',
+    component: 'textarea',
     rules: [
       {
         required: true,
-        message: "请输入标签",
+        message: '请输入标签',
       },
     ],
   },
   {
-    label: "说明-2",
-    prop: "desc22",
-    component: "textarea",
+    label: '说明-2',
+    prop: 'desc22',
+    component: 'textarea',
   },
-];
+]
 
 // const [registerFormTwo] = useForm({
 //   schemas: schema2,
@@ -225,66 +240,66 @@ const schema2: FormSchema[] = [
 // console.log('methods:', methods)
 
 const handleChange = (values: Recordable) => {
-  console.log("值改变 change", values);
-};
+  console.log('值改变 change', values)
+}
 
 const handleSubmit = (values: Recordable) => {
-  console.log("表单提交", values);
-};
+  console.log('表单提交', values)
+}
 
 const handleReset = () => {
-  console.log("重置表单", "handleReset");
-};
+  console.log('重置表单', 'handleReset')
+}
 
 const schemasTable: TableSchema[] = [
   {
-    label: "测试-link",
-    prop: "link",
+    label: '测试-link',
+    prop: 'link',
   },
   {
-    label: "测试-tag",
-    prop: "tag",
+    label: '测试-tag',
+    prop: 'tag',
   },
   {
-    label: "测试-progress",
-    prop: "progress",
+    label: '测试-progress',
+    prop: 'progress',
   },
   {
-    label: "searchable",
-    prop: "justinput",
+    label: 'searchable',
+    prop: 'justinput',
     searchable: true,
   },
   {
-    label: "searchConfig-select作为搜索",
-    prop: "select",
+    label: 'searchConfig-select作为搜索',
+    prop: 'select',
     searchConfig: {
-      label: "测试-select作为搜索",
-      prop: "select",
-      component: "select",
+      label: '测试-select作为搜索',
+      prop: 'select',
+      component: 'select',
       componentProps: {
         options: [
           {
-            label: "诗",
-            value: "0",
+            label: '诗',
+            value: '0',
           },
           {
-            label: "远方",
-            value: "1",
+            label: '远方',
+            value: '1',
           },
           {
-            label: "美食",
-            value: "2",
+            label: '美食',
+            value: '2',
           },
         ],
       },
     },
   },
   {
-    label: "操作列",
-    prop: "action",
-    slot: "action",
+    label: '操作列',
+    prop: 'action',
+    slot: 'action',
   },
-];
+]
 </script>
 
 <style>

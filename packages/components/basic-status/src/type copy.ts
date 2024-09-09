@@ -1,9 +1,11 @@
 export type StatusType = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
-export interface BasicStatusProps {
+interface contentProps {
   content?: string
   type?: StatusType
   color?: string
+}
 
-  contents?: BasicStatusProps[]
+export interface BasicStatusProps extends contentProps {
+  contents?: Array<contentProps>
 }
