@@ -1,0 +1,6 @@
+{
+  "name": "@open-power/utils",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts"
+}

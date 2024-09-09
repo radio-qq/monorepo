@@ -6,15 +6,17 @@
     </div>
     <div class="flex main-container">
       <BaseSide />
-      <MyButton />
+      <!-- <MyButton /> -->
       <div w="full" m="1.5" bg-white>
-        <BasicForm
+        <BasicStatus>示例-1</BasicStatus>
+        <!-- <BasicStatus>示例-2</BasicStatus> -->
+        <!-- <BasicForm
           v-model="formModel"
           @register="registerForm"
           @change="handleChange"
           @submit="handleSubmit"
           @reset="handleReset"
-        />
+        /> -->
         <!-- ???
         <BasicForm
           @register="registerFormTwo"
@@ -29,10 +31,10 @@
 </template>
 
 <script setup lang="ts">
-import { FormSchema, useForm } from "@/components/basic-form";
-import { TableSchema } from "@/components/basic-table";
-import { BasicRender } from "@/components/basic-render";
-import { MyButton } from "my-components";
+// import { FormSchema, useForm } from "@/components/basic-form";
+// import { TableSchema } from "@/components/basic-table";
+// import { BasicRender } from "@/components/basic-render";
+import { BasicStatus, BaseHeader, BaseSide } from "my-components";
 
 const formModel = ref({
   status: "0",
@@ -193,9 +195,9 @@ const schemas: FormSchema[] = [
   },
 ];
 
-const [registerForm] = useForm({
-  schemas,
-});
+// const [registerForm] = useForm({
+//   schemas,
+// });
 
 const schema2: FormSchema[] = [
   {
@@ -216,9 +218,9 @@ const schema2: FormSchema[] = [
   },
 ];
 
-const [registerFormTwo] = useForm({
-  schemas: schema2,
-});
+// const [registerFormTwo] = useForm({
+//   schemas: schema2,
+// });
 
 // console.log('methods:', methods)
 
