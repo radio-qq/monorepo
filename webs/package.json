@@ -8,10 +8,7 @@
     "build": "vite build",
     "generate": "vite-ssg build",
     "preview": "vite preview",
-    "typecheck": "vue-tsc --noEmit",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
