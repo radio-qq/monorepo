@@ -1,9 +1,11 @@
-export type StatusType = 'primary' | 'success' | 'info' | 'warning' | 'danger'
+export type StatusType = "primary" | "success" | "info" | "warning" | "danger";
 
-export interface BasicStatusProps {
-  content?: string
-  type?: StatusType
-  color?: string
+export interface SingleStatusProps {
+  content?: string;
+  type?: StatusType;
+  color?: string;
+}
 
-  contents?: BasicStatusProps[]
+export interface BasicStatusProps extends SingleStatusProps {
+  contents?: SingleStatusProps[];
 }
