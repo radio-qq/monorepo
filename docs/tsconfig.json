@@ -11,10 +11,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "paths": {
-      "@/*": ["src/*"],
-      "@components": ["src/components"]
-    },
+
     "skipLibCheck": true
   },
   "vueCompilerOptions": {
@@ -24,6 +21,7 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
+    "examples/**/*.vue",
     "src/**/*.vue",
     "./components.d.ts",
     "./auto-imports.d.ts",
