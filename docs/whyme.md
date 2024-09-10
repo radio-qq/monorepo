@@ -1,5 +1,0 @@
-:::demo
-
-table/table-demo
-
-:::

@@ -1,4 +1,4 @@
-import type { BasicFormProps, FormSchema } from "../types";
+import type { BasicFormProps, FormSchema } from "../type";
 
 import {
   normalizeSchema,
@@ -6,9 +6,9 @@ import {
   processSchemas,
 } from "../tools/normalize-schema";
 
-import { isFunction, isString } from "@/utils/is";
-import { cloneDeep } from "@/utils/object";
-import { merge } from "@/utils/object";
+import { isFunction, isString } from "@center/utils";
+import { cloneDeep } from "@center/utils";
+import { merge } from "@center/utils";
 
 type UpdateSchemaParams = Partial<FormSchema> &
   Required<Pick<FormSchema, "prop">>;

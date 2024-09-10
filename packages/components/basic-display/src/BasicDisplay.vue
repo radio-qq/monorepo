@@ -28,15 +28,8 @@
 <script lang="ts" setup>
 import { cloneDeep } from "lodash-es";
 
-import {
-  isFunction,
-  isArray,
-  isString,
-  getCustomProps,
-  getTableCellSlotName,
-  getValue,
-  setValue,
-} from "@plus-pro-components/components/utils";
+import { isArray, isString } from "@center/utils";
+
 import type { Ref } from "vue";
 import { ref, watch, computed } from "vue";
 import type {
@@ -46,9 +39,6 @@ import type {
   FieldValues,
   OptionsRow,
 } from "@plus-pro-components/types";
-import { useGetOptions } from "@plus-pro-components/hooks";
-import { ElIcon, ElDivider } from "element-plus";
-import { hasDisplayComponent, getDisplayComponent } from "./display-item";
 
 export interface PlusDisplayItemProps {
   column: PlusColumn;
@@ -79,7 +69,9 @@ const emit = defineEmits<PlusTableTableColumnEmits>();
 
 const customFieldProps = ref<RecordType>({});
 const formInstance = ref();
-const { customOptions: options } = useGetOptions(props.column);
+// const { customOptions: options } = useGetOptions(props.column);
+const { customOptions: options } = { options: [] };
+
 const columns: Ref<PlusColumn[]> = ref([]);
 const subRow = ref(cloneDeep(props.row));
 const statusValueTypes: (string | undefined)[] = [
@@ -101,10 +93,10 @@ watch(
 /** 多层值支持，原始值 */
 const displayValue = computed({
   get() {
-    return getValue(subRow.value, props.column.prop);
+    return subRow.value[props.column.prop];
   },
   set(value) {
-    setValue(subRow.value, props.column.prop, value);
+    // setValue(subRow.value, props.column.prop, value);
   },
 });
 
@@ -208,9 +200,10 @@ const getStatus = computed(() => {
   return option;
 });
 
-const displayComponent = computed(() =>
-  getDisplayComponent(props.column.displayType)
-);
+// const displayComponent = computed(() =>
+//   getDisplayComponent(props.column.displayType) || {}
+// );
+const displayComponent = computed(() => {});
 
 const displayComponentProps = computed<any>(() => {
   return {
@@ -262,19 +255,19 @@ watch(
 watch(
   () => props.column.fieldProps,
   (val) => {
-    getCustomProps(
-      val,
-      displayValue.value,
-      subRow.value,
-      props.index,
-      "fieldProps"
-    )
-      .then((data) => {
-        customFieldProps.value = data;
-      })
-      .catch((err) => {
-        throw err;
-      });
+    // getCustomProps(
+    //   val,
+    //   displayValue.value,
+    //   subRow.value,
+    //   props.index,
+    //   "fieldProps"
+    // )
+    //   .then((data) => {
+    //     customFieldProps.value = data;
+    //   })
+    //   .catch((err) => {
+    //     throw err;
+    //   });
   },
   {
     immediate: true,

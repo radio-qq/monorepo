@@ -7,7 +7,7 @@ import type { BasicRenderProps, PlusColumn } from "./type";
 import type { VNode } from "vue";
 
 import { isVNode } from "vue";
-import { isString } from "@/utils/is";
+import { isString } from "@center/utils";
 
 defineOptions({
   name: "PlusRender",

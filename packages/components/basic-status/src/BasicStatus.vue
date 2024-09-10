@@ -1,5 +1,9 @@
 <template>
-  <span :class="ns.b()" v-for="{ type, color, content } in getContents">
+  <span
+    :class="ns.b()"
+    v-for="({ type, color, content }, index) in getContents"
+    :key="index"
+  >
     <div
       :class="[ns.e('circle'), ns.em('circle', type)]"
       :style="{
@@ -13,30 +17,29 @@
 </template>
 
 <script lang="ts" setup>
-import { BasicStatusProps } from './type'
-import { withDefaults, defineProps, computed } from 'vue'
+import { BasicStatusProps } from "./type";
+import { withDefaults, defineProps, computed } from "vue";
 
-import { useBasicNamespace } from '@open-power/utils/ns'
+import { useBasicNamespace } from "@center/utils";
 
 defineOptions({
-  name: 'BasicStatus',
-})
+  name: "BasicStatus",
+});
 
 const props = withDefaults(defineProps<BasicStatusProps>(), {
-  content: '',
-  type: 'primary',
-})
+  content: "",
+  type: "primary",
+});
 
-const ns = useBasicNamespace('status')
+const ns = useBasicNamespace("status");
 
-const getContents = computed(() => {
-  console.log(props)
-  return Array.isArray(props.contents)
+const getContents = computed(() =>
+  Array.isArray(props.contents)
     ? props.contents
     : [{ content: props.content, type: props.type, color: props.color }]
-})
+);
 </script>
 
 <style lang="scss" scoped>
-@use './style.scss';
+@use "./style.scss";
 </style>

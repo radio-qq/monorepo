@@ -8,7 +8,9 @@ $color-danger: #f56c6c;
 // bem
 
 @mixin b($name) {
-  .#{$name} {
+  $namespace: "basic-";
+
+  .#{$namespace}#{$name} {
     @content;
   }
 }

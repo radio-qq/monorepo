@@ -29,16 +29,16 @@
 </template>
 
 <script lang="ts" setup>
-import type { BasicTableProps, BasicTableEmits } from "./types";
-import type { Page } from "@/components/basic-pagination";
+import type { BasicTableProps, BasicTableEmits } from "./type";
+import type { Page } from "@center/components";
 import type { Slots } from "vue";
 
-import { DefaultPaginationSettings } from "@/settings/index";
-import { isFunction, isObject } from "@/utils/is";
-import { cloneDeep } from "@/utils/object";
+import { DefaultPaginationSettings } from "../../../settings/index";
+import { isFunction, isObject } from "@center/utils";
+import { cloneDeep } from "@center/utils";
 
 import TableBody from "./components/TableBody.vue";
-import { BasicPagination } from "@/components/basic-pagination";
+import { BasicPagination } from "@center/components";
 
 defineOptions({
   name: "BasicTable",

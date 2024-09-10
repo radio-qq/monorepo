@@ -1,9 +1,10 @@
 <template>
   <div>
-    <BasicCopy>复制这段内容</BasicCopy>
+    <BasicCopy></BasicCopy>
+    <br />
   </div>
 </template>
 
 <script setup lang="ts">
-import { BasicCopy } from '@open-power/components'
+import { BasicCopy } from "@center/components";
 </script>

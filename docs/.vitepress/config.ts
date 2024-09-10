@@ -1,38 +1,45 @@
-import { defineConfig } from 'vitepress'
-import { mdPlugin } from './plugins/mdPlugin'
+import { defineConfig } from "vitepress";
+import { mdPlugin } from "./plugins/mdPlugin";
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Schema Driven Development',
-  description: 'A VitePress Site',
+  title: "Schema Driven Development",
+  description: "A VitePress Site",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
+      { text: "Home", link: "/" },
+      { text: "Examples", link: "/markdown-examples" },
     ],
     sidebar: [
       {
-        text: 'Examples??',
+        text: "Examples??",
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: "Markdown Examples", link: "/markdown-examples" },
+          { text: "Runtime API Examples", link: "/api-examples" },
+          { text: "Overview", link: "/overview" },
         ],
       },
       {
-        text: '基础组件',
+        text: "schema组件",
         items: [
-          { text: '状态', link: '/basic-components/basic-status' },
-          { text: '复制', link: '/basic-components/basic-copy' },
+          { text: "表单", link: "/advance-components/basic-form" },
+          { text: "表格", link: "/advance-components/basic-table" },
+        ],
+      },
+      {
+        text: "基本",
+        items: [
+          { text: "数据收集", link: "/basic-components/data-collect" },
+          { text: "数据展示", link: "/basic-components/data-display" },
+          { text: "其它", link: "/basic-components/other" },
         ],
       },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: "github", link: "https://github.com/vuejs/vitepress" },
     ],
   },
   markdown: {
     lineNumbers: true,
     config: (md) => mdPlugin(md),
   },
-})
+});

@@ -36,76 +36,55 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed } from "vue";
 import {
   DocumentCopy,
   ArrowDown,
   ArrowUp,
   EditPen,
-} from '@element-plus/icons-vue'
-import { ElIcon, ElTooltip } from 'element-plus'
+} from "@element-plus/icons-vue";
+import { ElIcon, ElTooltip } from "element-plus";
 const getComponent = (moduleFiles: Record<string, any>, path: string) => {
   const key = Object.keys(moduleFiles).find((i) =>
     i.endsWith(`/examples/${path}.vue`)
-  ) as string
-  return moduleFiles[key]?.default
-}
+  ) as string;
+  return moduleFiles[key]?.default;
+};
 
 const getPlaygroundEncoded = (source: string) => {
-  const code = decodeURIComponent(source)
+  const code = decodeURIComponent(source);
   const originCode = {
     [MAIN_FILE_NAME]: code,
-  }
-  const encoded = utoa(JSON.stringify(originCode))
-  return encoded
-}
+  };
+  const encoded = utoa(JSON.stringify(originCode));
+  return encoded;
+};
 
-// 编辑地址
-const editUrl =
-  'https://github.com/plus-pro-components/plus-pro-components/edit/dev/docs/examples'
-const editPlaygroundUrl = 'https://playground.plus-pro-components.com'
-// const editPlaygroundUrl = 'http://127.0.0.1:3002'
-
-// 自动加载 asyncRouter 文件夹下所有的异步路由
-const moduleFiles = import.meta.glob('../../../examples/**/*.vue', {
+const moduleFiles = import.meta.glob("../../../examples/**/*.vue", {
   eager: true,
-})
+});
 
 const props = defineProps<{
-  source: string
-  path: string
-  rawSource: string
-}>()
+  source: string;
+  path: string;
+  rawSource: string;
+}>();
 
-const show = ref(false)
-const total = ref(0)
-const size = 18
+const show = ref(false);
+const total = ref(0);
+const size = 18;
 
-const AppAsyncComponent = getComponent(moduleFiles, props.path)
+const AppAsyncComponent = getComponent(moduleFiles, props.path);
 
 const handleToggle = () => {
-  show.value = !show.value
-}
+  show.value = !show.value;
+};
 
-const decoded = computed(() => decodeURIComponent(props.source))
-const content = computed(() => decodeURIComponent(props.rawSource))
+const decoded = computed(() => decodeURIComponent(props.source));
+const content = computed(() => decodeURIComponent(props.rawSource));
 
-// add line-number
-const tem = content.value.split('\r\n')
-total.value = tem.length
-
-// 去github编辑
-const handleEdit = () => {
-  const url = `${editUrl}/${props.path}.vue`
-  window.open(url, '_blank')
-}
-
-// 去Playground编辑
-const handleEditPlayground = () => {
-  const encoded = getPlaygroundEncoded(props.rawSource)
-  const url = `${editPlaygroundUrl}/#${encoded}`
-  window.open(url, '_blank')
-}
+const tem = content.value.split("\r\n");
+total.value = tem.length;
 </script>
 
 <style lang="scss" scoped>

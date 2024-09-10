@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@open-power/components": "workspace:^",
-    "@open-power/utils": "workspace:^"
+    "@center/components": "workspace:^",
+    "@center/utils": "workspace:^"
   }
 }

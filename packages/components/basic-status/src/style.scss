@@ -1,6 +1,6 @@
 @use "../../../theme/index.scss" as *;
 
-@include b(basic-status) {
+@include b(status) {
   @include e(circle) {
     display: inline-block;
     width: 8px;

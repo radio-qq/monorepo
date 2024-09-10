@@ -67,11 +67,11 @@ import type {
   BasicFormEmits,
   FormSchema,
   FormAction,
-} from "./types";
+} from "./type";
 import type { FormInstance } from "element-plus";
 
 import { getComponent } from "./tools/component";
-import { isFunction, isUndefined } from "@/utils/is";
+import { isFunction, isUndefined } from "@center/utils";
 import { merge } from "lodash-es";
 
 defineOptions({

@@ -33,5 +33,5 @@
 </template>
 
 <script setup lang="ts">
-import { BasicStatus } from '@open-power/components'
+import { BasicStatus } from "@center/components";
 </script>

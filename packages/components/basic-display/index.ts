@@ -1,6 +1,3 @@
-import DisplayItem from "./src/BasicDisplay.vue";
+export * from "./src/type";
 
-export type PlusDisplayItemInstance = InstanceType<typeof DisplayItem>;
-export type { PlusDisplayItemProps } from "./src/index.vue";
-
-export const PlusDisplayItem = DisplayItem;
+export { default as BasicDisplay } from "./src/BasicDisplay.vue";
