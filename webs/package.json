@@ -11,12 +11,12 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@center/components": "workspace:*",
     "@element-plus/icons-vue": "^2.3.1",
     "@vueuse/core": "^11.0.3",
-    "element-plus": "^2.6.2",
     "lodash-es": "^4.17.21",
     "vue": "^3.4.21",
-    "@center/components": "workspace:*"
+    "element-plus": "2.3.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

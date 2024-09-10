@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 import { BasicStatusProps } from "./type";
-import { withDefaults, defineProps, computed } from "vue";
+import { computed } from "vue";
 
 import { useBasicNamespace } from "@center/utils";
 

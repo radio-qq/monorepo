@@ -25,7 +25,6 @@
   "include": [
     "components/**/*.ts",
     "components/**/*.vue",
-    "./auto-imports.d.ts",
     "./components.d.ts",
     "../types"
   ]
