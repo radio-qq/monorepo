@@ -16,7 +16,6 @@ import {
 import BasicCheckboxGroup from "@/components/basic-checkbox/BasicCheckboxGroup.vue";
 import BasicRadioGroup from "@/components/basic-radio/BasicRadioGroup.vue";
 import BasicSelect from "@/components/basic-select/BasicSelect.vue";
-import BasicUpload from "@/components/basic-upload/BasicUpload.vue";
 import type { Component } from "vue";
 
 const componentMap = new Map<ComponentType, Component>();
@@ -33,7 +32,6 @@ componentMap.set("cascader", ElCascader);
 componentMap.set("transfer", ElTransfer);
 componentMap.set("date-picker", ElDatePicker);
 componentMap.set("time-picker", ElTimePicker);
-componentMap.set("upload", BasicUpload);
 componentMap.set("switch", ElSwitch);
 componentMap.set("rate", ElRate);
 componentMap.set("slider", ElSlider);
