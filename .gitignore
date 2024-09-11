@@ -12,7 +12,7 @@ pnpm-lock.yaml
 
 *.log
 
-components.d.ts
+# components.d.ts
 auto-imports.d.ts
 .eslintrc-auto-import.json
 
